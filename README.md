@@ -1,2 +1,21 @@
-# bachelors-complete
-After years of hard work and learning from amazing professors and peers, I’ve earned my Bachelor’s in Software Engineering! I’m excited to share this milestone with you all. Join me in celebrating, and let’s look ahead to what’s next!  Event Details: Date: [loading] Time: [loading] Location: [loading]
+Mission: Graduated - Bachelor's Complete
+After years of hard work, coding challenges, and learning from incredible professors and peers, I’ve officially earned my Bachelor’s in Software Engineering! This page serves as a personal invitation to celebrate this milestone with me.
+
+What’s Inside
+A static HTML page with some interactive JavaScript
+
+Styled with custom CSS
+
+A background image of me to make it personal
+
+What's Next?
+The journey doesn’t stop here—next up, a Master’s degree! This page marks the first chapter, and I can’t wait to see where it takes me.
+
+Tech Used
+HTML for the page structure
+
+CSS for styling
+
+JavaScript for interactivity
+
+Feel free to explore, and thank you for celebrating with me!
