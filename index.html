@@ -2,53 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" 
-    content="width=device-width, 
-    initial-scale=1.0">
-    <title>Bachelors Complete</title>
-    <link rel="stylesheet" href=" css/main.css">
-
-    <script src="js/openEnvelope.js" defer ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bachelor's Complete</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    <h1> <code>&lt;Graduation status="complete" /&gt;</code></h1>
- 
-    <div class="envelope" onclick="openEnvelope()">
-        <div class="envelope-flap"></div>
-        <div class="envelope-body">
-          <div class="content">
-            <h1>Main Content</h1>
-            <p>This is the content that pops out of the envelope.</p>
-          </div>
-        </div>
-      </div>
+    <h1><code>&lt;Graduation status="complete" /&gt;</code></h1>
 
-      
     <main>
+        <!-- Hidden checkbox to control animation when clicked -->
+        <input type="checkbox" id="toggle-env" hidden />
 
+        <label for="toggle-env" class="env-toggle">
+            <div class="container">
+                <div class="envelope-wrapper">
+                    <div class="envelope">
+                        <div id="invite">
+                            <div class="text">
+                                <h2>Let's Celebrate the Completion of My Bachelor's Degree in Software Engineering!</h2>
+                                <img src="images/cayleighl.jpg" alt="Cayleigh Leishman in the outdoors">
+                                <h2>You're Invited!</h2>
+                                <p>Join us for a graduation celebration on:</p>
+                                <p><strong>Date:</strong> Loading</p>
+                                <p><strong>Time:</strong> Loading</p>
+                                <p><strong>Location:</strong> Loading</p>
+                                <p>Please RSVP by November 20th, 2025.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="heart"></div>
+        </label>
 
-    <h1>Lets Celebrate the completion of my Bachelor's Degree in Software Engineering!</h1>
-
-    <img src="images/cayleighl.jpg" alt="Cayleigh Leishman">
-
-
-    <div id="invite">
-        <h2>You're Invited!</h2>
-        <p>Join us for a graduation celebration on:</p>
-        <p><strong>Date:</strong> Loading</p>
-        <p><strong>Time:</strong>laoding</p>
-        <p><strong>Location:</strong> loading</p>
-        <p>Please RSVP by November, 2025.</p>
-
-    </div>
-
+        <footer>
+            <p>Created by Cayleigh Leishman</p>
+            <a href="timeline.html">Back to the Timeline!</a>
+            <p>2025</p>
+            <p>All rights reserved</p>
+        </footer>
     </main>
 </body>
-<footer>
-    <p>Created by Cayleigh Leishman</p>
-    <a href="timeline.html">Back to the Timeline! </a>
-    <p>2025</p>
-    <p>All rights reserved</p>
-
 </html>
