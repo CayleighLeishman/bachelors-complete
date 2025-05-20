@@ -11,6 +11,16 @@
     --chosen-font: 'Lora', 'Arial', sans-serif;
     --box-shadow: 0px 4px 6px rgba(13, 33, 23, 0.678);
 }
+/* attempt to get the img/gif to be responsive */
+
+.preamble {
+background: url("../images/paper.gif") repeat-y;
+ background-size: auto 100%; 
+  padding: 25px 45px 0px 35px;
+  font-family: var(--chosen-font);
+  font-size: 14pt;
+  font-style: italic;
+}
 
 body {
     perspective: 1000px;

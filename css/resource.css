@@ -1,0 +1,41 @@
+#resources-body{
+    font-family:var(--chosen-font);
+   margin: 0;
+   padding: 2rem;
+   background-color: var(--envelope-color);
+
+ }
+ header {
+   text-align: center;
+   margin-bottom: 2rem;
+ }
+ h1 {
+   font-size: 2rem;
+   margin: 0;
+ }
+ section {
+   margin-bottom: 2rem;
+ }
+ h2 {
+   border-bottom: 2px solid #ccc;
+   padding-bottom: 0.5rem;
+ }
+ ul {
+   list-style-type: none;
+   padding-left: 0;
+ }
+ li {
+   margin: 0.5rem 0;
+ }
+ a {
+   color: var(--primary-color);
+   text-decoration: none;
+ }
+ a:hover {
+   text-decoration: underline;
+ }
+ footer {
+   text-align: center;
+   font-size: 0.9rem;
+   color: #777;
+}
