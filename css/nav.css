@@ -1,0 +1,102 @@
+
+/* =============*
+* Navigation    *
+* ============= */
+
+nav {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 1.8rem;
+    box-shadow: var(--box-shadow);
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+nav a.active {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* Hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Hamburger icon styling */
+.hamburger {
+  font-size: 2rem;
+  cursor: pointer;
+  display: block;
+  padding: 1rem;
+}
+
+/* Default menu state: hidden on smaller screens */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  flex-direction: column;
+  background-color: var(--secondary-color, #fff);
+  position: absolute;
+  top: 60px; /* adjust based on your header height */
+  right: 1rem;
+
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+/* Show menu when checkbox is checked */
+#menu-toggle:checked + .hamburger + .menu {
+  display: flex;
+}
+
+/* Responsive rule: show full nav on larger screens */
+@media (min-width: 568px) {
+  .hamburger {
+    display: none;
+  }
+
+  .menu {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+/* Ensure nav has relative positioning for absolute menu placement */
+nav {
+  position: relative;
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 1.8rem;
+  box-shadow: var(--box-shadow);
+  width: 100%;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu a:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+.menu a.active {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}

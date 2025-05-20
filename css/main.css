@@ -1,78 +1,86 @@
-/* === IMPORTING FONTS === */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Prata&family=Tagesschrift&display=swap');
 
-/* === ROOT VARIABLES: COLORS, FONTS, SHADOWS === */
 :root {
     --primary-color: #3a5a40;
     --secondary-color: #e3d5ca;
     --background-color: #b0cab1;
-    --white: #fff;
     --text-color: #333;
-    --envelope-color: #ff9f55;
+    --envelope-color: #fff;
     --envelope-flap-color: #ff6666;
     --heart-color: #fb6f92;
-    --font-family: 'Arial', sans-serif;
+    --chosen-font: 'Lora', 'Arial', sans-serif;
     --box-shadow: 0px 4px 6px rgba(13, 33, 23, 0.678);
 }
 
-/* === GLOBAL IMAGE STYLING === */
-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 25% 2%;
-}
-
-/* === BODY STYLING === */
 body {
-    font-family: var(--font-family);
+    perspective: 1000px;
+    font-family: var(--chosen-font);
     background-color: var(--background-color);
     color: var(--text-color);
-    margin: 5rem;
-    padding: 4rem 1rem 8rem;
+    margin: 0;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* === MAIN CONTENT STYLING === */
 main {
     padding: 2rem;
     border-radius: 1.8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Tagesschrift', 'Prata', serif;
+}
+/* =============*
+*    Images     *
+* ============= */
+img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 25% 2%;
+    box-shadow: var(--box-shadow);
+    margin: 1rem 0;
 }
 
-/* === CENTER CONTAINER === */
-/* === ENVELOPE CONTAINER === */
-.container {
-    height: 100vh;
-    display: grid;
-    place-items: center;
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
 }
+
+
+/* =============*
+* envelope stuff*
+ ===============*/
 
 .envelope {
     position: relative;
-    width: 300px;
-    height: 230px;
     transition: all 0.6s ease-in-out;
     transform-style: preserve-3d;
-    perspective: 1000px;
+    border-radius: 10px;
 }
 
-
-/* === ENVELOPE STYLING === */
-.envelope-wrapper {
+.envelope-flap {
     background: var(--envelope-color);
     box-shadow: var(--box-shadow);
+    perspective: 1000px;
+    position: relative;
+    height: 150px;
+    width: 300px;
+    margin-bottom: 1rem;
+    cursor: pointer;
 }
 
-/* === ENVELOPE FLAP === */
-.envelope::before {
+.envelope-flap::after {
     content: '';
     position: absolute;
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     border-top: 130px solid var(--envelope-flap-color);
     border-right: 150px solid transparent;
     border-left: 150px solid transparent;
@@ -80,151 +88,104 @@ main {
     z-index: 2;
 }
 
-
-/* === INVITE INSIDE ENVELOPE === */
 #invite {
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, 0%) scale(0.6);
-    transform-origin: bottom center;
-    width: 60%;
-    min-height: 250px;
+    width: 200%;
+    text-align: center;
     background-color: var(--secondary-color);
     box-shadow: var(--box-shadow);
     padding: 1rem 2rem;
-    overflow: auto;
+    transform: translate(-50%, 0%) scale(0.5);
     opacity: 0;
-    transition: transform 0.6s ease-in-out 0.4s, opacity 0.4s ease-in-out 0.4s;
-    z-index: 8
+    border-radius: 10px;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    z-index: 1;
 }
 
-/* === TEXT INSIDE INVITE === */
-#invite .text,
-#invite > .text {
-    font-size: 14px;
-    text-align: left;
-}
 
-/* === HEART ICON === */
-.heart {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 15px;
-    height: 15px;
-    background: var(--heart-color);
-    transform: translate(-50%, 20%) rotate(45deg);
-    transition: transform 0.5s ease-in-out 1s;
-    z-index: 4;
-}
-
-/* === HEART LOBES === */
-.heart::before,
-.heart::after {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background: var(--heart-color);
-    border-radius: 50%;
-}
-
-.heart::before {
-    top: -7.5px;
-}
-
-.heart::after {
-    right: 7.7px;
-}
-
-/* === ENVELOPE ANIMATIONS === */
-
-/* Open envelope flap */
-#toggle-env:checked ~ .env-toggle .container .envelope::before {
-    transform: rotateX(180deg);
-    transform-origin: top center;
-}
-
-/* Show invite card */
+/* ================*
+* envelope effects *
+* =================*/
 #toggle-env:checked ~ .env-toggle .container .envelope #invite {
-    top: -30%;
-    transform: translate(-50%, 0%) scale(1);
-    opacity: 1;
-    transition: top 0.8s ease-in-out 0.6s, transform 0.8s ease-in-out 0.6s, opacity 0.4s ease-in-out 0.6s;
-}
-
-/* Spin heart */
-#toggle-env:checked ~ .env-toggle .container .heart {
-    transform: rotate(90deg);
-    transition-delay: 1.4s;
-}
-
-/* Reset flap when closed */
-#toggle-env:not(:checked) ~ .env-toggle .container .envelope::before {
-    transform: rotateX(0deg);
-    transform-origin: top center;
-    transition: transform 0.4s ease-in-out;
-}
-
-/* Hide invite card */
-#toggle-env:not(:checked) ~ .env-toggle .container .envelope #invite {
     top: 50%;
-    left: 0%;
-    transform: rotate(-90deg) translateX(-100%);
-    transform-origin: left center;
-    opacity: 0;
-    transition: transform 0.8s ease-in-out, opacity 0.6s ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
 }
 
-/* Reset heart when closed */
-#toggle-env:not(:checked) ~ .env-toggle .container .heart {
-    transform: rotate(0deg);
-    transition-delay: 0s;
+#toggle-env:checked ~ .confetti-wrapper {
+    display: block;
 }
 
-/* === FOOTER === */
+
+/* =============*
+* Footer stuff*
+* ============= */
 footer {
+    margin-top: 2rem;
     text-align: center;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    box-shadow: var(--box-shadow);
-    padding: 20px;
-    position: fixed;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+
+/* =================*
+* social media icons *
+* =================-*/
+.socials a img {
+    width: 50px;
+    height: 50px;
+    margin: 0.3rem;
+}
+
+.socials a:hover img {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+.socials a {
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    border-radius: 0.8rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: medium;
+}
+
+.socials a icon {
+    position: relative;
+    color: #262626;
+    transition: 0.5s;
+    z-index: 3;
+}
+
+ul li:nth-child(1) a::before {
+    background-color: #3b5999;
+}
+
+ul li:nth-child(2) a::before {
+    background-color: #C4302B;
+}
+
+ul li:nth-child(3) a::before {
+    background-color: #FFFC00;
+}
+
+ul li:nth-child(4) a::before {
+    background-color: #000;
+}
+
+
+@media screen and (max-width: 768px) {
+#invite{
+
+    max-width: 90vw;
     width: 100%;
-    bottom: 0;
-    font-family: var(--font-family);
-    font-size: 1rem;
+    
 }
-
-footer p {
-    margin: 5px 0;
-}
-
-/* === RESPONSIVE DESIGN === */
-@media screen and (max-width: 600px) {
-    .graduation {
-        font-size: 2.5rem;
-        padding: 10px;
-    }
-
-    .timeline-item {
-        width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .timeline-item.right {
-        left: 0;
-    }
-
-    .timeline::after {
-        left: 10px;
-    }
-
-    .timeline-item::after,
-    .timeline-item.right::after {
-        left: 0;
-        right: auto;
-    }
 }

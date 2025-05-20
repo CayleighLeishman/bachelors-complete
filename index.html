@@ -1,46 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Bachelor's Complete</title>
-    <link rel="stylesheet" href="css/main.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- for hamburger menu in css -->
+    <link rel="stylesheet" href="css/nav.css" />
+
+    <!-- extra links -->
+     <!-- for sources see "resources" -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+
     <h1><code>&lt;Graduation status="complete" /&gt;</code></h1>
-
+    <header>
+        <nav>
+            <input type="checkbox" id="menu-toggle" />
+                <label for="menu-toggle" class="hamburger">&#9776;</label>
+                <ul class="menu">
+                <li><a href="#">Portfolio Project</a></li>
+                <li><a href="#">About Cayleigh</a></li>
+                <li><a href="https://cayleighleishman.github.io/casscade-cayos/">Casscade-Cayos</a></li>
+                <li><a href="#">Closet Coutor (in progress)</a></li>
+                <li><a href="https://github.com/CayleighLeishman" target="_blank">GitHub Profile</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <!-- Hidden checkbox to control animation when clicked -->
-        <input type="checkbox" id="toggle-env" hidden />
 
+        <!-- To add Cofnetti effect check out this link:
+               https://www.youtube.com/watch?v=pKHKQwAsZLI
+        
+        <button class="party">confetti
+            <span class="party">!</span>
+        </button> -->
+
+        <input type="checkbox" id="toggle-env" hidden />
         <label for="toggle-env" class="env-toggle">
+            <div class="envelope-flap"></div>
             <div class="container">
-                <div class="envelope-wrapper">
-                    <div class="envelope">
-                        <div id="invite">
-                            <div class="text">
-                                <h2>Let's Celebrate the Completion of My Bachelor's Degree in Software Engineering!</h2>
-                                <img src="images/cayleighl.jpg" alt="Cayleigh Leishman in the outdoors">
-                                <h2>You're Invited!</h2>
-                                <p>Join us for a graduation celebration on:</p>
-                                <p><strong>Date:</strong> Loading</p>
-                                <p><strong>Time:</strong> Loading</p>
-                                <p><strong>Location:</strong> Loading</p>
-                                <p>Please RSVP by November 20th, 2025.</p>
-                            </div>
-                        </div>
+                <div class="envelope">
+                    <div id="invite">
+                        <h2>Let's Celebrate the Completion of My Bachelor's Degree in Software Engineering!</h2>
+                        <img src="images/cayleighl.jpg" alt="Cayleigh Leishman in the outdoors" />
+                        <h2>You're Invited!</h2>
+                        <p>Join us for a graduation celebration on:</p>
+                        <p><strong>Date:</strong> Friday, December 19th, 2025</p>
+                        <p><strong>Time:</strong> 6:00 PM</p>
+                        <p><strong>Location:</strong> Leishman Home (message for address)</p>
+                        <p>Please RSVP by <strong>November 20th, 2025</strong>.</p>
                     </div>
                 </div>
             </div>
-            <div class="heart"></div>
         </label>
-
+        <div class="confetti-wrapper"></div>
         <footer>
             <p>Created by Cayleigh Leishman</p>
             <a href="timeline.html">Back to the Timeline!</a>
-            <p>2025</p>
-            <p>All rights reserved</p>
+            <a href="resources-used.html">Credits</a>
+            <p>2025 &bull; All rights reserved</p>
+            <section class="socials">
+              
+                <a href="https://www.youtube.com/@CayleighsDevDiaries">
+                
+                    <i class="fa-brands fa-youtube icon"></i>
+
+                </a>
+                <a href="https://www.facebook.com/cayleigh.marie.9/">
+                    
+                    <i class="fab fa-facebook-f icon"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/cayleigh-leishman/">
+                
+                    <i class="fa-brands fa-linkedin icon"></i>
+
+                </a>
+            </section>
         </footer>
     </main>
 </body>
