@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Prata&family=Tagesschrift&display=swap');
 @font-face {
   font-family: 'Cayleighs Strong';
-  src: url('../fonts/CayleighsStrongFont-Regular.woff') format('woff');
+  src: url('../fonts/CayleighsStrongFont-Regular.woff2') format('woff2'),
+       url('../fonts/CayleighsStrongFont-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -18,7 +19,9 @@
     --box-shadow: 0px 4px 6px rgba(13, 33, 23, 0.678);
 }
 /* attempt to get the img/gif to be responsive */
-
+* {
+  outline: 1px solid red;
+}
 .preamble {
 background: url("../images/paper.gif") repeat-y;
  background-size: auto 100%; 
@@ -26,9 +29,10 @@ background: url("../images/paper.gif") repeat-y;
   font-family: var(--chosen-font);
   font-size: 14pt;
   font-style: italic;
+
 }
 .my-font{   
-    font-family: 'Cayleighs Strong', sans-serif;
+    font-family: 'Cayleighs Strong', var(--chosen-font), sans-serif;
     font-size: 5rem;
     color: var(--primary-color);
     text-align: center;
@@ -121,7 +125,8 @@ header nav ul {
 #invite {
     position: absolute;
     left: 50%;
-    width: 200%;
+    width: 100%;
+    max-width: 700px; 
     text-align: center;
     background-color: var(--secondary-color);
     box-shadow: var(--box-shadow);
@@ -131,6 +136,19 @@ header nav ul {
     border-radius: 10px;
     transition: transform 0.6s ease, opacity 0.6s ease;
     z-index: 1;
+}
+
+
+ #invite.preamble {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
 }
 
 
@@ -191,7 +209,7 @@ footer a {
     font-size: medium;
 }
 
-.socials a icon {
+.socials a i {
     position: relative;
     color: #262626;
     transition: 0.5s;
