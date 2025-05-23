@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Prata&family=Tagesschrift&display=swap');
+@font-face {
+  font-family: 'Cayleighs Strong';
+  src: url('../fonts/CayleighsStrongFont-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
     --primary-color: #3a5a40;
@@ -21,7 +27,13 @@ background: url("../images/paper.gif") repeat-y;
   font-size: 14pt;
   font-style: italic;
 }
-
+.my-font{   
+    font-family: 'Cayleighs Strong', sans-serif;
+    font-size: 5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
 body {
     perspective: 1000px;
     font-family: var(--chosen-font);
@@ -38,11 +50,13 @@ main {
     display: flex; 
     flex-direction: column;
     align-items: center;
-    padding:15rem;
-
+    background-color: var(--secondary-color);
     border-radius: 1.8rem;
-
+    padding: 4rem;
 }
+
+
+
 /* =============*
 *    Images     *
 * ============= */
@@ -137,10 +151,14 @@ header nav ul {
 /* =============*
 * Footer stuff*
 * ============= */
+
+
 footer {
+    font-family: Cayleighs Strong,var(--chosen-font), sans-serif;
     margin-top: 2rem;
     text-align: center;
     font-size: 0.9rem;
+    border-top: var(--envelope-color) solid 2px;     /* thjis is the solid white line, not greyish one */
 }
 
 footer a {
@@ -203,5 +221,12 @@ ul li:nth-child(4) a::before {
     max-width: 90vw;
     width: 100%;
     
+}
+  main {
+    padding: 15rem;
+  }
+.envelope-flap {
+    height: 100px;
+    width: 200px;
 }
 }

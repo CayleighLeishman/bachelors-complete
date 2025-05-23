@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Cayleighs Strong Font';
+    src: url('CayleighsStrongFont-Regular.woff2') format('woff2'),
+        url('CayleighsStrongFont-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+this worked more smoothly for me:
+@font-face {
+  font-family: 'Cayleighs Strong';
+  src: url('../fonts/CayleighsStrongFont-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

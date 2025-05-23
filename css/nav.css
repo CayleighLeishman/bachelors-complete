@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Prata&family=Tagesschrift&display=swap');
+@font-face {
+  font-family: 'Cayleighs Strong';
+  src: url('../fonts/CayleighsStrongFont-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* =============*
  * Navigation   *
  * ============= */
 
 /* Main nav container styling */
 nav {
+  font-size: 32px;
+  font-family: Cayleighs Strong,var(--chosen-font), sans-serif;
   position: relative; /* needed for absolute children */
   background-color: var(--secondary-color);
   padding: 1rem;
@@ -24,6 +34,8 @@ nav a {
 nav a:hover {
   background-color: var(--primary-color);
   color: var(--secondary-color);
+  padding:1.3rem;
+  border-radius: .5rem;
 }
 
 /* Active link styling */
