@@ -141,3 +141,15 @@ nav a.active {
     border-radius: 0;
   }
 }
+
+
+header nav ul {
+    list-style: none;
+
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+   
+}
