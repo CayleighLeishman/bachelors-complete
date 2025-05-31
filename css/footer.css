@@ -1,0 +1,53 @@
+
+/* =============*
+* Footer stuff*
+* ============= */
+
+footer {
+    font-family: Cayleighs Strong,var(--chosen-font), sans-serif;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: var(--envelope-color) solid 2px;     /* thjis is the solid white line, not greyish one */
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+/* =================*
+* social media icons *
+* =================-*/
+
+.socials{
+        z-index: -1;
+}
+.socials a img {
+    width: 50px;
+    height: 50px;
+    margin: 0.3rem;
+
+}
+
+.socials a:hover img {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+.socials a {
+    text-decoration: none;
+    background-color: var(--secondary-color);
+    border-radius: 0.8rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: medium;
+}
+
+.socials a i {
+    position: relative;
+    color: #262626;
+    transition: 0.5s;
+    z-index: 3;
+}

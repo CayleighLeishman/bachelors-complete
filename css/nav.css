@@ -45,6 +45,14 @@ nav a.active {
  ;
 }
 
+
+.preamble h1,
+.preamble h2,
+.preamble p {
+  text-align: center;
+  padding: 0.5rem 1rem;
+}
+
 /* =============*
  * Hamburger and Menu *
  * ============= */
@@ -122,7 +130,7 @@ nav a.active {
  * ============= */
 
 /* On larger screens show nav normally and hide hamburger/menu sliding */
-@media (min-width: 568px) {
+@media (min-width: 600px) {
   .hamburger {
     display: none;
   }

@@ -1,0 +1,152 @@
+.envelope-flap:before{
+     content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 130px solid var(--envelope-flap-color);
+    border-right: 150px solid transparent;
+    border-left: 150px solid transparent;
+    transition: all 0.6s ease-in-out;
+    z-index: 2;
+}
+
+/* =============*
+* envelope stuff*
+ ===============*/
+
+.envelope {
+    position: relative;
+    transition: all 0.6s ease-in-out;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+}
+
+.envelope-flap {
+    background: var(--envelope-color);
+    box-shadow: var(--box-shadow);
+    perspective: 1000px;
+    position: relative;
+    height: 150px;
+    width: 300px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+/* ================*
+* envelope effects *
+* =================*/
+#checkbox:checked ~ .env-toggle::before {
+  content: '';
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  height: 100vh;
+  z-index: 9999;
+}
+
+
+#checkbox:checked ~ .env-toggle .container .envelope #invite {
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+#checkbox:checked ~ .confetti-wrapper {
+    display: block;
+}
+
+
+/* attempt to get the img/gif to be responsive */
+/* * {
+  outline: 1px solid red;
+} */
+.preamble {
+background: url("../images/paper.gif") repeat-y;
+ background-size: auto 100%; 
+  padding: 25px 45px 0px 35px;
+  font-family: var(--chosen-font);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-style: italic;
+
+}
+.my-font{   
+    font-family: 'Cayleighs Strong', var(--chosen-font), sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#invite {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 600px ;
+    text-align: center;
+    background-color: var(--envelope-flap-color);
+    box-shadow: var(--box-shadow);
+
+    transform: translate(-50%, 0%) scale(0.5);
+    opacity: 0;
+    border-radius: 10px;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    z-index: 10000;
+}
+
+/* 
+#invite.visible {
+    
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 5;
+} */
+
+@media (min-width:400px){
+    
+    .envelope-flap {
+        height: 100px;
+        width: 200px;
+    }
+
+    .envelope-flap:before{
+     content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 45px solid var(--envelope-flap-color);
+    border-right: 50px solid transparent;
+    border-left: 50px solid transparent;
+    transition: all 0.6s ease-in-out;
+    z-index: 2;
+    }
+     /* attempt to get the img/gif to be responsive */
+    /* * {
+    outline: 1px solid red;
+    } */
+    .preamble {
+    background: url("../images/paper.gif") repeat-y;
+     background-size: auto 100%; 
+      padding: 25px 45px 0px 35px;
+      font-family: var(--chosen-font);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-style: italic;
+    }
+
+    .my-font{   
+        font-family: 'Cayleighs Strong', var(--chosen-font), sans-serif;
+        font-size: clamp(2rem, 5vw, 4rem);
+        color: var(--primary-color);
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    #invite{
+
+        max-width: 90vw;
+        width: 100%;
+
+    }
+
+    
+}
