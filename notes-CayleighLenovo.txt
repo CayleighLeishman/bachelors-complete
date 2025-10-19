@@ -1,0 +1,117 @@
+June 1st 
+
+
+May 30
+
+I moved envelope stuff into it's own css to keep track of where all the issues were comming from. 
+because I'm still struggling to figure out why the envelope was not working and keeps going above the page.
+
+may 26
+
+FINANLLY GOT THE POSITION TO WORK> So it's now centered (cant rememebr how) and I got the invite to finally be bigger than the envelope at this time. I tried %, i trem rem, but i got it to 
+work using this:
+
+#invite {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 600px ;      <----- this code!!!
+    text-align: center;
+    background-color: var(--envelope-flap-color);
+    box-shadow: var(--box-shadow);
+
+    transform: translate(-50%, 0%) scale(0.5);
+    opacity: 0;
+    border-radius: 10px;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    z-index: 10000;
+}
+
+
+
+
+may 23 
+OKAY WHEN I remove position: fixed i tallows the size to be normal but wont text aling
+
+may 22
+
+I changed the secondary bacgrund (<main></main>) to brown. I dont knowif i like the brown. the only 
+other colorI cn think of is dark green which im not against but I'll have to change font color. I need family feedback so 
+I'll wait on that and leave it brown.
+also!!! I found a way to add my writing style onto the page! I had it on the invite at first but didn't like it, so I just have it for footer, nav and "you're invited" on the invite paper.
+
+
+
+may 19 
+
+I forgot to type here more cosnistently... my bad!
+
+I update the navigation! I got sooo excited about it. I did have help
+from chatgpt, and making sure that it worked. I just need to figure out why 
+there's this "button" or "mark" that shows up on the page when in mobile view.
+
+I also fixed some stuf i resources-used.thml/ i added the css
+I created a new css for nav and the resource page, i think i'll be excited!
+
+I probably should have used svelte for this project, but I'm gald
+I get to refresh the concepts of basic static html and css. I'm excited that 
+
+it's mainly css. I did debate about adding javascrippt so i can do what that one 
+code pen I linkedn "resources-used" had, but I thik i want to stick t seeing
+what i can do with just html and css. I think I can do it!
+
+i regret making changes to the timeline page. I loved the resume look for it.
+I'll fix that later if i ave time. for now I'll
+seewhat i canget done
+
+i tried to update timeline but i noticed the nav isnt working. That's interesting so I'll be trying to figure out how to navigate that after i get everything else working.
+
+
+
+may 10th
+
+I forgot to take notes each time I worked. Fear not though! I had to remove a lot fo those changes anyways! 
+
+Some of the changes I made today was where chatgbt had me write something like
+ .content > .wrappper > invite
+ 
+ when a simple 
+  #invite 
+  
+worked just fine
+
+I'm trying to work on the envelope and I used this as inspiration
+This is one of my favourite envelope functions I've found
+https://codepen.io/frills/pen/xbxxzBw
+
+i want to have the letter effect it has
+
+
+
+May 8 th
+i
+ dit some more and I never oushed the decent working copy to github (just imagine the upside down emoji face) so I'm dooned
+
+
+May 7 2025: 
+
+make a link that leads to a google form, 
+or better yet, have a button that leads them 
+to a form you created that updates to supabase
+ or firebase. 
+
+add this note maybe to the form: 
+If you feel the need to gift me, here are some suggestions:
+- A gift card to Walmart, Target, or Amazon
+- diploma from from this link:
+-any web development clothing (hoodies, shirts, etc.)
+- a web development book (I like to read, especially biographies. Here's a list of suggestions: ) 
+- something church related 
+
+
+
+
+I'm getting sleepy but i wanted tto sya im proud of what i coud get done. YEs I broek it immediatly after it worked but all in  day of progress
+
+
+

@@ -1,0 +1,19 @@
+May 7 2025: 
+
+make a link that leads to a google form, 
+or better yet, have a button that leads them 
+to a form you created that updates to supabase
+ or firebase. 
+
+add this note maybe to the form: 
+If you feel the need to gift me, here are some suggestions:
+- A gift card to Walmart, Target, or Amazon
+- diploma from from this link:
+-any web development clothing (hoodies, shirts, etc.)
+- a web development book (I like to read, especially biographies. Here's a list of suggestions: ) 
+- something church related 
+
+
+
+
+I'm getting sleepy but i wanted tto sya im proud of what i coud get done. YEs I broek it immediatly after it worked but all in  day of progress

@@ -2,53 +2,138 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" 
-    content="width=device-width, 
-    initial-scale=1.0">
-    <title>Bachelors Complete</title>
-    <link rel="stylesheet" href=" css/main.css">
-
-    <script src="js/openEnvelope.js" defer ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Graduation invitation for Cayleigh and Nataijia">
+    <title>Cayleigh & Nataijia's Graduation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <h1> <code>&lt;Graduation status="complete" /&gt;</code></h1>
- 
-    <div class="envelope" onclick="openEnvelope()">
-        <div class="envelope-flap"></div>
-        <div class="envelope-body">
-          <div class="content">
-            <h1>Main Content</h1>
-            <p>This is the content that pops out of the envelope.</p>
-          </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#">Resources Used</a></li>
+            <li><a href="#">Cayleigh Chats</a></li>
+        </ul>
+    </nav>
+    <div id="envelope-container" role="button" tabindex="0" aria-label="Click to open invitation">
+        <div class="envelope">
+            <div class="envelope-flap"></div>
+            <div class="envelope-body">
+                <div class="heart-seal" aria-hidden="true">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </div>
+            </div>
         </div>
-      </div>
-
-      
-    <main>
-
-
-    <h1>Lets Celebrate the completion of my Bachelor's Degree in Software Engineering!</h1>
-
-    <img src="images/cayleighl.jpg" alt="Cayleigh Leishman">
-
-
-    <div id="invite">
-        <h2>You're Invited!</h2>
-        <p>Join us for a graduation celebration on:</p>
-        <p><strong>Date:</strong> Loading</p>
-        <p><strong>Time:</strong>laoding</p>
-        <p><strong>Location:</strong> loading</p>
-        <p>Please RSVP by November, 2025.</p>
-
+        <p class="click-instruction">Click to open</p>
+        <div id="countdown" class="countdown">
+            <p class="countdown-label">Event starts in:</p>
+            <div class="countdown-timer">
+                <div class="time-unit">
+                    <span id="days">0</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="time-unit">
+                    <span id="hours">0</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-unit">
+                    <span id="minutes">0</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-unit">
+                    <span id="seconds">0</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
+        </div>
     </div>
 
-    </main>
-</body>
-<footer>
-    <p>Created by Cayleigh Leishman</p>
-    <a href="timeline.html">Back to the Timeline! </a>
-    <p>2025</p>
-    <p>All rights reserved</p>
+    <div id="invitation-content" aria-hidden="true">
+        <button id="close-invitation" class="close-btn" aria-label="Close invitation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <header>
+            <div class="invitation-image">
+                <img src="images/fingerguns.webp" alt="Graduation celebration" />
+            </div>
+            <h1>You're welcome to Cayleigh and Nataijia's graduation!</h1>
+            <p class="hero-description">Join us in celebrating this momentous achievement as we honor two incredible graduates embarking on their next journey!</p>
+        </header>
 
+        <main>
+            <section class="event-details" aria-labelledby="details-heading">
+                <h2 id="details-heading">Event Details</h2>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <h3>Date</h3>
+                        <p>Saturday, December 18th, 2025</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Time</h3>
+                        <p>Nataijia's Ceremony</p>
+                        <p>3:00 PM - 4:00 PM</p>
+
+                        <p>Cayleigh's Ceremony</p>
+                        <p>5:00pm - 6pm</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Location</h3>
+                        <p>Nataijia's Ceremony</p>
+                        <p>To be Determined</p>
+                        <p>Cayleigh's Ceremony/p>
+                        <p>To be Determined</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Dress Code</h3>
+                        <p>Smart Casual</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gift-registry-section" aria-labelledby="gift-heading">
+                <h2 id="gift-heading">Gift Registry</h2>
+                <div class="registry-grid">
+                    <div class="registry-card">
+                        <h3>Cayleigh's Registry</h3>
+                        <p>Help Cayleigh celebrate with a gift from her registry</p>
+                        <a href="https://www.amazon.com/hz/wishlist/ls/136X55LHOWPWD?ref_=wl_share" class="btn-registry" aria-label="View Cayleigh's gift registry">View Registry</a>
+                    </div>
+                    <div class="registry-card">
+                        <h3>Nataijia's Registry</h3>
+                        <p>Help Nataijia celebrate with a gift from her registry</p>
+                        <a href="#" class="btn-registry" aria-label="View Nataijia's gift registry">View Registry</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>We can't wait to celebrate with you!</p>
+            <p class="footer-note">With love, Cayleigh & Nataijia</p>
+        </footer>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Resources Used</a>
+            </div>
+            <div class="footer-years">
+                <p>Cayleigh 2020-2025</p>
+                <p>Nataijia 2019-2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="javascript/script.js"></script>
+</body>
 </html>
