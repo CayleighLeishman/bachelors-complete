@@ -1,27 +1,38 @@
 /*
-  styles.css - Graduation invitation styling
-  Purpose: Responsive, accessible styling for envelope animation and invitation content
+  styles.css - Graduation Invitation Styling
+  Purpose: Provides responsive, accessible, and visually appealing styles
+           for the animated envelope and invitation content.
+  Author: Cayleigh Leishman
+  Project: Graduation Invitation
 */
 
+/* ===================================================================
+   Root Variables
+   Define theme colors, fonts, and reusable styling constants
+================================================================== */
 :root {
-    --primary-color: #3a5a40;
-    --secondary-color: #e3d5ca;
-    --background-color: #b0cab1;
-    --white: #fff;
-    --text-color: #333;
-    --envelope-color: #e5b895;
-    --envelope-flap-color: #9d0404;
-    --heart-color: #fb6f92;
-    --font-family: 'Lato', 'Arial', sans-serif;
-    --heading-font: 'Playfair Display', 'Georgia', serif;
-    --box-shadow: 0px 4px 6px rgba(13, 33, 23, 0.678);
-    --transition: all 0.3s ease;
+    --primary-color: #006EB6; /* Main accent color (blue) */
+    --secondary-color: #d9e1e8; /* Soft, shiny silver tone */
+    --background-color: #e9ede9; /* Light neutral background */
+    --white: #fff; /* White color for backgrounds and contrast */
+    --text-color: #333; /* Default text color for readability */
+    --envelope-color: #a1d2f7; /* Envelope body color */
+    --envelope-flap-color: #006EB6; /* Envelope flap color */
+    --heart-color: #fb6f92; /* Pink accent for heart seal and emphasis */
+    --font-family: 'Lato', 'Arial', sans-serif; /* Primary font stack */
+    --heading-font: 'Playfair Display', 'Georgia', serif; /* Elegant heading font */
+    --box-shadow: 0px 4px 6px rgba(13, 33, 23, 0.678); /* Depth shadow for elements */
+    --transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
+/* ============================================================
+   Global Reset and Body Styling
+   Ensures consistent spacing and basic layout styling
+========================================================= */
 * {
     margin: 0;
     padding: 0;
-    box-box: border-box;
+    box-box: border-box; /* (Note: should be box-sizing: border-box) */
 }
 
 body {
@@ -37,12 +48,16 @@ body {
     padding: 1rem;
 }
 
+/* ============================================================
+   Main Navigation Bar
+   Fixed, responsive navigation with hover and focus effects
+=============================================================== */
 .main-nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(58, 90, 64, 0.95);
+    background: var(--primary-color);
     backdrop-filter: blur(10px);
     z-index: 1000;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -54,11 +69,6 @@ body {
     justify-content: center;
     gap: 2rem;
     padding: 1rem;
-    margin: 0;
-}
-
-.main-nav li {
-    margin: 0;
 }
 
 .main-nav a {
@@ -81,14 +91,15 @@ body {
     color: var(--primary-color);
 }
 
-body:has(.main-nav) {
-    padding-top: 5rem;
-}
-
+/* =============================================================
+   Envelope Animation Section
+   Contains the clickable animated envelope and opening motion
+================================================================ */
 #envelope-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 6rem;
     gap: 1.5rem;
     cursor: pointer;
     transition: var(--transition);
@@ -98,17 +109,11 @@ body:has(.main-nav) {
     transform: scale(1.05);
 }
 
-#envelope-container:focus {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 8px;
-    border-radius: 8px;
-}
-
 .envelope {
     position: relative;
     width: 280px;
     height: 180px;
-    perspective: 1000px;
+    perspective: 1000px; /* Enables 3D rotation */
 }
 
 .envelope-body {
@@ -120,8 +125,6 @@ body:has(.main-nav) {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    z-index: 1;
 }
 
 .envelope-flap {
@@ -135,46 +138,42 @@ body:has(.main-nav) {
     border-top: 90px solid var(--envelope-flap-color);
     transform-origin: top center;
     transition: transform 0.6s ease;
-    z-index: 2;
 }
 
+/* Envelope opening animation */
 #envelope-container.opening .envelope-flap {
     transform: rotateX(-180deg);
 }
 
+/* Heart seal decoration */
 .heart-seal {
     color: var(--heart-color);
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
-.click-instruction {
-    font-size: 1.125rem;
-    color: var(--primary-color);
-    font-weight: 600;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
-}
-
+/* =================================================================
+   Invitation Content
+   Hidden until envelope is opened; includes details and RSVP form
+==================================================================== */
 #invitation-content {
     max-width: 900px;
-    width: 100%;
     background: var(--white);
     border-radius: 12px;
     box-shadow: var(--box-shadow);
     padding: 2rem;
-    position: relative;
     display: none;
     animation: fadeIn 0.8s ease;
 }
 
+/* Visible when envelope is opened */
 #invitation-content.visible {
     display: block;
 }
 
+/* =====================================
+   Close Button
+   Used to close the invitation view
+======================================== */
 .close-btn {
     position: absolute;
     top: 1rem;
@@ -190,36 +189,16 @@ body:has(.main-nav) {
     cursor: pointer;
     transition: var(--transition);
     color: var(--primary-color);
-    z-index: 10;
 }
 
-.close-btn:hover, .close-btn:focus {
-    background-color: var(--primary-color);
+.close-btn:hover{
+    background: var(--primary-color);
     color: var(--white);
-    transform: rotate(90deg);
 }
-
-.close-btn:focus {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
-}
-
-.close-btn svg {
-    width: 20px;
-    height: 20px;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* ========================================
+   Header and Hero Section
+   Includes main title and description
+========================================== */
 header {
     text-align: center;
     margin-bottom: 3rem;
@@ -227,64 +206,16 @@ header {
     border-bottom: 2px solid var(--secondary-color);
 }
 
-.invitation-image {
-    margin: 0 auto 2rem;
-    max-width: 400px;
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--box-shadow);
-}
-
-.invitation-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    pointer-events: none;
-}
-
 h1 {
     font-family: var(--heading-font);
+    color: var(--primary-color);
     font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    line-height: 1.3;
 }
 
-.hero-description {
-    font-size: 1.125rem;
-    color: var(--text-color);
-    max-width: 600px;
-    margin: 0 auto;
-    font-weight: 300;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
-
-section {
-    padding: 1.5rem 0;
-}
-
-h2 {
-    font-family: var(--heading-font);
-    font-size: 1.75rem;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-h3 {
-    font-family: var(--heading-font);
-    font-size: 1.25rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
+/* ======================================================
+   Event Details Grid
+   Displays key details such as date, time, and location
+==========================================================*/
 .details-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -298,11 +229,10 @@ h3 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.detail-item p {
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
+/* =======================================================
+   RSVP Form
+   Collects guest responses with accessible form elements
+===========================================================*/
 #rsvp-form {
     max-width: 500px;
     margin: 0 auto;
@@ -311,117 +241,10 @@ h3 {
     gap: 1.5rem;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-label {
-    font-weight: 600;
-    color: var(--primary-color);
-    font-size: 1rem;
-}
-
-label span {
-    color: var(--heart-color);
-}
-
-input, select {
-    padding: 0.75rem;
-    border: 2px solid var(--secondary-color);
-    border-radius: 6px;
-    font-family: var(--font-family);
-    font-size: 1rem;
-    transition: var(--transition);
-}
-
-input:focus, select:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(58, 90, 64, 0.1);
-}
-
-input:invalid:not(:placeholder-shown), select:invalid:not(:placeholder-shown) {
-    border-color: var(--heart-color);
-}
-
-.error-message {
-    color: var(--heart-color);
-    font-size: 0.875rem;
-    display: none;
-}
-
-.error-message.visible {
-    display: block;
-}
-
-.btn-primary, .btn-secondary {
-    padding: 0.875rem 2rem;
-    border: none;
-    border-radius: 6px;
-    font-family: var(--font-family);
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: var(--white);
-}
-
-.btn-primary:hover, .btn-primary:focus {
-    background-color: #2d4632;
-    transform: translateY(-2px);
-    box-shadow: var(--box-shadow);
-}
-
-.btn-primary:focus {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
-}
-
-.btn-secondary {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    justify-content: center;
-}
-
-.btn-secondary:hover, .btn-secondary:focus {
-    background-color: #d4c4b8;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.btn-secondary:focus {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
-}
-
-#confirmation-message {
-    margin-top: 1.5rem;
-    padding: 1rem;
-    border-radius: 6px;
-    text-align: center;
-    font-weight: 600;
-    display: none;
-}
-
-#confirmation-message.visible {
-    display: block;
-}
-
-#confirmation-message.success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 2px solid #c3e6cb;
-}
-
+/* ===============================================
+   Gift Registry Section
+   Displays registry links and information cards
+================================================== */
 .gift-registry-section {
     background: linear-gradient(135deg, rgba(58, 90, 64, 0.05) 0%, rgba(227, 213, 202, 0.1) 100%);
     padding: 2rem 1.5rem;
@@ -432,120 +255,16 @@ input:invalid:not(:placeholder-shown), select:invalid:not(:placeholder-shown) {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    max-width: 800px;
-    margin: 0 auto;
 }
 
-.registry-card {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+/* ===============================================
+   Countdown Timer
+   Displays remaining time until graduation event
+=================================================== */
+.countdown {
+    margin-top: 2rem;
     text-align: center;
-    border: 2px solid var(--secondary-color);
-    transition: var(--transition);
 }
-
-.registry-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--box-shadow);
-    border-color: var(--primary-color);
-}
-
-.registry-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.registry-card p {
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
-    font-size: 1rem;
-}
-
-.btn-registry {
-    display: inline-block;
-    padding: 0.875rem 2rem;
-    background-color: var(--primary-color);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: var(--transition);
-}
-
-.btn-registry:hover, .btn-registry:focus {
-    background-color: #2d4632;
-    transform: translateY(-2px);
-    box-shadow: var(--box-shadow);
-}
-
-.btn-registry:focus {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 2px;
-}
-
-.calendar-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-footer {
-    text-align: center;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 2px solid var(--secondary-color);
-}
-
-footer p {
-    font-size: 1.125rem;
-    margin-bottom: 0.5rem;
-}
-
-.footer-note {
-    font-family: var(--heading-font);
-    font-size: 1.25rem;
-    color: var(--primary-color);
-}
-
-@media (min-width: 640px) {
-    #invitation-content {
-        padding: 3rem;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    .details-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .envelope {
-        width: 320px;
-        height: 200px;
-    }
-
-    .envelope-flap {
-        border-left: 160px solid transparent;
-        border-right: 160px solid transparent;
-        border-top: 100px solid var(--envelope-flap-color);
-    }
-
-    .registry-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .calendar-buttons {
-        flex-direction: row;
-        max-width: 100%;
-        justify-content: center;
-    }
-}
-
 @media (min-width: 768px) {
     h1 {
         font-size: 3rem;
@@ -600,10 +319,14 @@ footer p {
     margin-top: 0.5rem;
 }
 
+
+/* =============================================================
+   Resources and Chats Pages
+   Additional sections for related content and communication
+================================================================ */
 .resources-main,
 .chats-main {
     max-width: 900px;
-    width: 100%;
     background: var(--white);
     border-radius: 12px;
     box-shadow: var(--box-shadow);
@@ -611,78 +334,33 @@ footer p {
     margin: 2rem auto;
 }
 
-.resources-header,
-.chats-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 2px solid var(--secondary-color);
+
+/* =====================================================
+    registraton anchor links
+    =========================================*/
+    /* For all registry buttons */
+.btn-registry {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
-.resources-header h1,
-.chats-header h1 {
-    font-family: var(--heading-font);
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+.btn-registry:hover,
+.btn-registry:focus {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  color: var(--primary-color); /* Keep text readable */
 }
 
-.resources-header p,
-.chats-header p {
-    font-size: 1.125rem;
-    color: var(--text-color);
-}
-
-.resource-section {
-    margin-bottom: 2.5rem;
-}
-
-.resource-section h2 {
-    font-family: var(--heading-font);
-    font-size: 1.75rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.resource-section ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.resource-section li {
-    margin-bottom: 0.75rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.resource-section li::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-.resource-section a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.resource-section a:hover,
-.resource-section a:focus {
-    text-decoration: underline;
-    color: #2d4632;
-}
-
-.resources-footer {
-    text-align: center;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 2px solid var(--secondary-color);
-    color: var(--text-color);
-}
-
+/* =========================================
+   Footer Section
+   Contains closing note and site credits
+============================================ */
 .site-footer {
     width: 100%;
     background: var(--primary-color);
@@ -697,54 +375,35 @@ footer p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
 }
 
+
+/* for anchor links */
+
+/* For footer link */
 .footer-links a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition);
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer-links a:hover,
 .footer-links a:focus {
-    color: var(--secondary-color);
-    text-decoration: underline;
+  color: #4158d0; /* Change color on hover, like nav */
 }
 
-.footer-years {
-    text-align: right;
-}
 
-.footer-years p {
-    margin: 0.25rem 0;
-    font-size: 0.95rem;
-}
-
-@media (max-width: 640px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-years {
-        text-align: center;
-    }
-}
-
+/* ============================================
+ Print Styles
+   Optimizes layout for printed invitations
+=============================================== */
 @media print {
     body {
-        background: white;
-        padding: 0;
+        background: var(--white);
+        padding-top: 0;
     }
 
-    .main-nav, .site-footer {
-        display: none;
-    }
-
-    #envelope-container {
+    .main-nav, .site-footer, #envelope-container {
         display: none;
     }
 
@@ -752,17 +411,5 @@ footer p {
         display: block !important;
         box-shadow: none;
         max-width: 100%;
-    }
-
-    .rsvp-section, .calendar-section, .gift-registry-section {
-        display: none;
-    }
-
-    header, footer {
-        page-break-inside: avoid;
-    }
-
-    .details-grid {
-        page-break-inside: avoid;
     }
 }
