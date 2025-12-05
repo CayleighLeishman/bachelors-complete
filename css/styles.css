@@ -32,7 +32,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-box: border-box; /* (Note: should be box-sizing: border-box) */
 }
 
 body {
